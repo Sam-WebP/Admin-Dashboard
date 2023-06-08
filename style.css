@@ -1,0 +1,48 @@
+.page-container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-areas: 
+    "sidebar header header"
+    "sidebar projects announce"
+    "sidebar projects trending";
+}
+
+.sidebar-container {
+    grid-area: sidebar;
+    border: 1px solid black;
+    display: grid;
+    grid-template-areas: 
+    "dashboard"
+    "home"
+    "profile"
+    "messages"
+    "history"
+    "tasks"
+    "communities"
+    "settings"
+    "support"
+    "privacy";
+}
+
+.header-container {
+    grid-area: header;
+    border: 1px solid black;
+}
+
+.projects-container {
+    grid-area: projects;
+    border: 1px solid black
+}
+
+.announcements-container {
+    grid-area: announce;
+    border: 1px solid black
+}
+
+.trending-container {
+    grid-area: trending;
+    border: 1px solid black
+}
