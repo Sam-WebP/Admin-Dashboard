@@ -1,48 +1,220 @@
-.page-container {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 1fr 2fr 2fr;
-    grid-template-areas: 
-    "sidebar header header"
-    "sidebar projects announce"
-    "sidebar projects trending";
+:root {
+    background: rgb(25,146,212);
+    background: linear-gradient(144deg, rgba(25,146,212,1) 0%, rgba(226,232,240,1) 100%);
 }
+
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto/Roboto-Bold.ttf);
+    font-weight: bold;
+}
+
+p {
+    font-family: Roboto;
+    text-shadow: -1px 1px 0px #000,
+    0px 0px 0px #000,
+    0px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.page-container {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 0.5fr 4fr;
+    grid-template-rows: 0.8fr 4fr;
+    grid-template-areas: 
+    "sidebar header"
+    "sidebar projects";
+}
+
+/* Sidebar */
 
 .sidebar-container {
     grid-area: sidebar;
-    border: 1px solid black;
-    display: grid;
-    grid-template-areas: 
-    "dashboard"
-    "home"
-    "profile"
-    "messages"
-    "history"
-    "tasks"
-    "communities"
-    "settings"
-    "support"
-    "privacy";
+    display: flex;
+    flex-direction: column;
+    background: rgb(0,0,0);
+    background: linear-gradient(137deg, rgba(0,0,0,0.030878859857482177) 0%, rgba(226,232,240,0.3254156769596199) 100%); 
+    color: white;
+
 }
+
+.sidebar-container img {
+    height: 20px; 
+    width: auto;
+    -webkit-filter: invert(100%);
+            filter: invert(100%);
+}
+
+.sidebar-container p:hover {
+   color: black;
+   text-shadow: -1px 1px 200px #fff,
+   0px 0px 20px #fff,
+   0px -1px 0 #fff,
+   -1px -1px 0 #fff;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: start;
+    gap: 10px;
+    padding-left: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.dashboard {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.sidebar-container .dashboard-logo {
+    height: 40px;
+    width: auto;
+}
+
+.space {
+    margin-bottom: 50px;
+}
+
+/* Header */
 
 .header-container {
     grid-area: header;
-    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    background: rgb(0,0,0);
+    background: linear-gradient(137deg, rgba(0,0,0,0.030878859857482177) 0%, rgba(226,232,240,0.3254156769596199) 100%); 
 }
 
+.header-top {
+    display: grid;
+    grid-template-columns:2fr 1fr;
+    padding: 10px;
+}
+
+.header-bottom {
+    display: grid;
+    grid-template-columns:2fr 1fr;
+    padding: 10px;
+}
+
+.profile-welcome {
+    display: grid;
+    grid-template-columns: auto 60%;
+    gap: 10px;
+    align-items: center;
+    justify-content: left;
+}
+
+.header-bottom p {
+    margin: 0px;
+}
+
+.greeting {
+    font-size: 10px;
+    margin-bottom: 2px;
+}
+
+.interaction-buttons {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.interaction-buttons button {
+    background-color: white;
+    font-family: Roboto;
+    color: black;
+    width: 80px;
+    height: 30px;
+    border-radius: 15px;
+    border: solid 1px black;
+}
+
+.interaction-buttons button:hover {
+    background-color: black;
+    font-family: Roboto;
+    color: white;
+    width: 80px;
+    height: 30px;
+    border-radius: 15px;
+    border: solid 2px white;
+}
+
+.searching {
+    display: grid;
+    grid-template-columns: auto 60%;
+    gap: 10px;
+    align-items: center;
+    justify-content: left;
+}
+
+.search-bar {
+    width: 100%;
+}
+
+.notification-profile {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture {
+    border-radius: 25px;
+}
+
+.header-container .logo {
+    height: 20px; 
+    width: auto;
+    -webkit-filter: invert(100%);
+            filter: invert(100%);
+}
+
+.small-profile {
+    height: 40px;
+    width: auto;
+}
+
+.medium-profile {
+    height: 60px;
+    width: auto;
+}
+
+/* Projects */
+
 .projects-container {
+    display: grid;
     grid-area: projects;
-    border: 1px solid black
+    grid-template-columns: 2fr 0.8fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "project announce"
+    "project trending";
+}
+
+.real-projects {
+    grid-area: project;
+    
 }
 
 .announcements-container {
     grid-area: announce;
-    border: 1px solid black
+    
 }
 
 .trending-container {
     grid-area: trending;
-    border: 1px solid black
+    
 }
